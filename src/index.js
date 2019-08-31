@@ -7,7 +7,11 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    const data = [];
+    const data = [{
+        id: 1,
+        isbn: "123456789321654987",
+        title: "Node js on the fly 123"
+    }];
     res.send(data);
 });
 

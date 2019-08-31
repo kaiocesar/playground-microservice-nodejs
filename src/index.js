@@ -7,10 +7,9 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    console.log('Returning books list');
     const data = [];
     res.send(data);
 });
 
-console.log(`Running on port ${port}`);
+console.log(`🚀 Running on port ${port}`);
 app.listen(port);

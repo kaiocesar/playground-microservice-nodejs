@@ -1,19 +1,19 @@
-const express = require('express');
-const path  = require('path');
-const bodyParser = require('body-parser');
+import express from 'express';
+import path  from 'path';
+import bodyParser from 'body-parser';
 
 const port = process.argv.slice(2)[0];
 const app = express();
+
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    const data = [{
-        id: 1,
-        isbn: "123456789321654987",
-        title: "Node js on the fly 123"
-    }];
-    res.send(data);
+app.get('/ping', (req, res) => {
+    res.end('pong')
 });
 
-console.log(`🚀 Running on port ${port}`);
-app.listen(port);
+app.listen(port || 3000, () => {
+    console.log(`🚀 Running on port ${port || 3000}`);
+});
+
+module.exports = app;
+module.exports.port = port;

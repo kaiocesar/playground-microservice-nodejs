@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import { Pokemon } from '../models/pokemon.models';
 
 export class ApiService {
     public welcomeMessage(req: Request, res: Response) {
